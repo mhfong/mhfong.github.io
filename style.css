@@ -52,11 +52,18 @@ img {
   cursor: pointer;
   position: relative;
   background:transparent;
-  color: white;
-  transform: translateX(0px);
-	transition: transform 0.5s linear;
+  text-shadow: 0 0 20px #f0c420;
+  color: #f0c420;
 }
-
+.fa-sun {
+  opacity: 0;
+  background:transparent;
+  color: white;
+}
+.light {
+  color: yellow;
+  box-shadow: 0 0 10px yellow;
+}
 .switch {
   position: relative;
   display: inline-block;
@@ -68,7 +75,7 @@ img {
   position: absolute;
 }
 .label {
-  background-color: #111;
+  background-color: #111111;
 	border-radius: 50px;
 	cursor: pointer;
 	display: flex;
@@ -79,14 +86,16 @@ img {
   width: 38px;
   height: 20px;
 }
-
-.label:before {
-  border-radius: 20px;
-}
-
-.checkbox:checked + .label .fa-moon {
-  visibility: hidden;
+.checkbox:checked + .label .fa-moon{
   opacity: 0;
-  transition: visibility 0s 0.5s, opacity 0.5s linear;
-	transform: translateX(16px);
+}
+.checkbox:checked + .label .fa-sun{
+  text-shadow: 0 0 50px white;
+  opacity: 100;
+}
+.checkbox:checked + .label {
+  background: linear-gradient(90deg, rgba(18,194,233,1) 0%, rgba(196,113,237,1) 52%, rgba(246,79,89,1) 100%);
+}
+#moon {
+
 }
