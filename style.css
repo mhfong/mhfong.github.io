@@ -14,12 +14,15 @@ li, a, input{
   color: #edf0f1;
   text-decoration: none;
 }
-
+html {
+  height: 100%;
+  --bg: white;
+}
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e184ff;
+  border-bottom: 1px solid #d964ff;
   padding: 10px 5%;
 }
 
@@ -41,18 +44,20 @@ header {
 }
 
 .nav li a:hover {
-  color: #0088a9;
+  text-shadow: 0 0 10px white;
+  color: ;
 }
 
 img {
   width: 3%;
 }
 
+/*Toggle Switch*/
 .fa-moon {
   cursor: pointer;
   position: relative;
   background:transparent;
-  text-shadow: 0 0 20px #f0c420;
+  text-shadow: 0 0 30px #f0c420;
   color: #f0c420;
 }
 .fa-sun {
@@ -87,15 +92,36 @@ img {
   height: 20px;
 }
 .checkbox:checked + .label .fa-moon{
+  visibility: hidden;
   opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 400ms
 }
 .checkbox:checked + .label .fa-sun{
-  text-shadow: 0 0 50px white;
+  text-shadow: 0 0 30px white;
+  visibility: visible;
   opacity: 100;
+  transition: visibility 0s linear 0s, opacity 300ms;
 }
 .checkbox:checked + .label {
-  background: linear-gradient(90deg, rgba(18,194,233,1) 0%, rgba(196,113,237,1) 52%, rgba(246,79,89,1) 100%);
-}
-#moon {
 
+  background: linear-gradient(90deg, rgba(18,194,233,1) 0%, rgba(196,113,237,1) 52%, rgba(246,79,89,1) 100%);
+  transition: background-color 2s linear;
+}
+/*Toggle Switch End*/
+
+.checkbox:checked + .label .ball {
+	transform: translateX(-16px);
+}
+
+.label .ball {
+  opacity: 100;
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 19px;
+	height: 16px;
+	width: 16px;
+	transform: translateX(0px);
+	transition: transform 0.3s linear;
 }
